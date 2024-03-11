@@ -438,6 +438,9 @@ span.line {
     /* background-color: red; */
   }
 
+  p{
+    user-select: none;
+  }
 }
 
 @media only screen and (min-width: 800px) {
