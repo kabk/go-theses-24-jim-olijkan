@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
 
     function isChrome() {
@@ -145,40 +146,32 @@ document.addEventListener('DOMContentLoaded', function () {
                         const photoCredits = item["5 Photo credits"];
 
                         document.querySelectorAll(".clickMe." + figClassTarget).forEach(function (fig) {
-                            fig.addEventListener("click", function () {
+                            // Add click event listener
+                            fig.addEventListener("click", handleClick);
+                            // Add touch event listener
+                            fig.addEventListener("touchstart", handleClick);
+                        
+                            function handleClick() {
                                 const imgElement1 = document.getElementById("myImgID_1");
                                 const imgElement2 = document.getElementById("myImgID_2");
-
-                                // Function to handle image loading and other tasks
-                                function handleImageLoad() {
-                                    // Load the new image
-                                    imgElement1.onload = function () {
-                                        // Once the image is loaded, apply the shape-outside property
-                                        imgElement1.style.shapeOutside = 'url("assets/images/' + filename + '")';
-                                        imgElement2.style.shapeOutside = 'url("assets/images/' + filename + '")';
-
-                                        // You may need to update other properties or trigger functions related to image changes
-                                        // updateImageSizeAndPosition();
-                                    };
-
-                                    document.getElementById('credits').innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
-
-                                    // Change the src of the image
-                                    imgElement1.src = "assets/images/" + filename;
-                                    imgElement2.src = "assets/images/" + filename;
-                                    updateImageSizeAndPosition();
-                                }
-
-                                // Call handleImageLoad function on click
-                                handleImageLoad();
-                            });
-
-                            // Add a touch event listener to the figure element
-                            fig.addEventListener("touchstart", function () {
-                                // Call the same function as for click event
-                                handleImageLoad();
-                            });
-
+                        
+                                // Load the new image
+                                imgElement1.onload = function () {
+                                    // Once the image is loaded, apply the shape-outside property
+                                    imgElement1.style.shapeOutside = 'url("assets/images/' + filename + '")';
+                                    imgElement2.style.shapeOutside = 'url("assets/images/' + filename + '")';
+                        
+                                    // You may need to update other properties or trigger functions related to image changes
+                                    // updateImageSizeAndPosition();
+                                };
+                        
+                                document.getElementById('credits').innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
+                        
+                                // Change the src of the image
+                                imgElement1.src = "assets/images/" + filename;
+                                imgElement2.src = "assets/images/" + filename;
+                                updateImageSizeAndPosition();
+                            }
                         });
                     }
                 })
@@ -188,29 +181,29 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
 
-            function documentContainsId(id) {
-                // Try to find the element with the specified ID
-                var element = document.getElementById(id);
-
-                // If the element is found, return true; otherwise, return false
-                return !!element;
-            }
-
-
-            var desiredId = "myImgID_1";
-            if (documentContainsId(desiredId)) {
-                document.getElementById('myImgID_1').addEventListener('mouseover', function () {
-                    document.getElementById('tempBar').classList.add('showBar');
-                });
-
-                document.getElementById('myImgID_1').addEventListener('mouseout', function () {
-                    document.getElementById('tempBar').classList.remove('showBar');
-                });
-
-            }
+                function documentContainsId(id) {
+                    // Try to find the element with the specified ID
+                    var element = document.getElementById(id);
+                    
+                    // If the element is found, return true; otherwise, return false
+                    return !!element;
+                }
 
 
+                var desiredId = "myImgID_1";
+                if (documentContainsId(desiredId)) {
+                    document.getElementById('myImgID_1').addEventListener('mouseover', function () {
+                        document.getElementById('tempBar').classList.add('showBar');
+                    });
+        
+                    document.getElementById('myImgID_1').addEventListener('mouseout', function () {
+                        document.getElementById('tempBar').classList.remove('showBar');
+                    });
+        
+                }
+                
 
+            
 
 
 
@@ -375,45 +368,38 @@ document.addEventListener('DOMContentLoaded', function () {
                         const title = item["3 Title"];
                         const date = item["4 Date"];
                         const photoCredits = item["5 Photo credits"];
-
+                        
 
                         document.querySelectorAll(".clickMe." + figClassTarget).forEach(function (fig) {
-                            fig.addEventListener("click", function () {
+                            // Add click event listener
+                            fig.addEventListener("click", handleClick);
+                            // Add touch event listener
+                            fig.addEventListener("touchstart", handleClick);
+                        
+                            function handleClick() {
                                 const imgElement3 = document.getElementById("myImgID_3");
                                 const imgElement4 = document.getElementById("myImgID_4");
-                            
-                                // Function to handle image loading and other tasks
-                                function handleImageLoad() {
-                                    // Load the new image
-                                    imgElement3.onload = function () {
-                                        // Once the image is loaded, apply the shape-outside property
-                                        imgElement3.style.shapeOutside = 'url("assets/images/' + filename + '")';
-                                        imgElement3.src = "assets/images/" + filename;
-                                        imgElement4.style.shapeOutside = 'url("assets/images/' + filename + '")';
-                                        imgElement4.src = "assets/images/" + filename;
-                                        // You may need to update other properties or trigger functions related to image changes
-                                        // updateImageSizeAndPosition();
-                                    };
-                            
-                                    // Change the src of the image
+                        
+                                // Load the new image
+                                imgElement3.onload = function () {
+                                    // Once the image is loaded, apply the shape-outside property
+                                    imgElement3.style.shapeOutside = 'url("assets/images/' + filename + '")';
                                     imgElement3.src = "assets/images/" + filename;
+                                    imgElement4.style.shapeOutside = 'url("assets/images/' + filename + '")';
                                     imgElement4.src = "assets/images/" + filename;
-                            
-                                    imageCredits.innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
-                            
-                                    // Call any other functions related to handling click/touch event
-                                    // handleClick();
-                                }
-                            
-                                // Call handleImageLoad function on click
-                                handleImageLoad();
-                            });
-                            
-                            // Add a touch event listener to the figure element
-                            fig.addEventListener("touchstart", function () {
-                                // Call the same function as for click event
-                                handleImageLoad();
-                            });
+                                    // You may need to update other properties or trigger functions related to image changes
+                                    // updateImageSizeAndPosition();
+                                };
+                        
+                                // Change the src of the image
+                                imgElement3.src = "assets/images/" + filename;
+                                imgElement4.src = "assets/images/" + filename;
+                        
+                                imageCredits.innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
+                        
+                                // author + ", " + title + ", " + date + ", " + photoCredits 
+                                // handleClick()
+                            }
                             imageCredits.innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
                         });
                     }
