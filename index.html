@@ -1,156 +1,233 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
-	<head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Drawing Borders
+    </title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<body>
+    <div class="vertLine"></div>
+    <div class="horizLine"></div>
 
-		<!-- meta tags, fill them with website meta infos -->
-		<meta name="description" content="Description of your web page" /> 
-		<meta name="keywords" content="Keyword 1, Keyword 2, Keyword 3, Keyword 4, Keyword 5 ..."/> 
-		<meta name="author" content="Name of the author/owner of the webpage's content" />
 
-		<!-- favicon, fill with a 512x512px .png image named 'favicon.png' -->
-		<link rel="icon" href="assets/images/favicon/favicon.png"/>
-
-		<!-- website title, visible in the browser window and on link sharing -->
-		<title>Website title</title>
-
-		<!-- links for extensions and dependencies -->
-
-		<!-- css -->
-		<!-- first link your CSS dependences, here is normalize, a CSS 'reset' for cross-browser appearence uniformity -->
-		<link rel="stylesheet" href="assets/css/normalize.css">
-		<!-- you stylesheet -->
-		<link rel="stylesheet" href="assets/css/style.css?ver=1.0">
-
-		<!-- js -->
-		<!-- first link your javascript dependencies, here as an example is Jquery -->
-		<script type="text/javascript" src="assets/js/jquery-3.6.0.min.js"></script>
-		<!-- your function scripts -->
-		<script type="text/javascript" src="assets/js/script.js?ver=1.0"></script>
-	    
-	</head>
-
-	<body>
-
-		<!-- webpage content goes here -->
-
-		<div class="page-wrapper">
-
-			<header>
-
-				<h1> Hello World!</h1>
-				<p>A <strong>document</strong> by <em>me</em></p>
-
-				<nav>
-					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#chapter-1">Chapter 1</a></li>
-						<li><a href="#chapter-2">Chapter 2</a></li>
-						<li><a href="#chapter-3">Chapter 3</a></li>
-						<li><a href="#epilogue">Epilogue</a></li>
-					</ul>
-				</nav>
-
-			</header>
-
-			<main>
-
-				<h2 id="intro">Intro</h2>
-
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus nulla, rutrum eget malesuada sit amet, gravida in nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ligula felis, consectetur ut mi eu, egestas interdum augue. Aliquam a ipsum lectus. Pellentesque a vulputate ligula, id malesuada quam. Cras eleifend in leo vitae pellentesque. Duis ac vehicula sem, ut blandit leo. Mauris vulputate dapibus velit tincidunt varius. Duis euismod diam tellus, eget dictum ante suscipit quis. Nunc sed est ipsum. Nunc luctus augue id sapien blandit fermentum. Aenean eget ipsum lacinia mi eleifend luctus at a arcu.
-				</p>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="chapter-1">Chapter 1</h2>
-
-				<p>
-					Sed volutpat mauris at tempus cursus. Aenean finibus eros nibh, vel consequat velit porta ut. In faucibus ante sed mattis efficitur. Duis semper scelerisque sollicitudin. Vestibulum faucibus, nisl at venenatis posuere, nisi felis congue mauris, eget auctor mi nulla nec tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer sapien metus, blandit vehicula purus quis, vehicula cursus erat. Donec non cursus neque.
-				</p>
-
-				<details>
-
-					<summary>
-						<h3 id="intro">Sub-content, example of an accordion</h2>
-					</summary>
-
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque metus nulla, rutrum eget malesuada sit amet, gravida in nisi. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus ligula felis, consectetur ut mi eu, egestas interdum augue. Aliquam a ipsum lectus. Pellentesque a vulputate ligula, id malesuada quam. Cras eleifend in leo vitae pellentesque. Duis ac vehicula sem, ut blandit leo. Mauris vulputate dapibus velit tincidunt varius. Duis euismod diam tellus, eget dictum ante suscipit quis. Nunc sed est ipsum. Nunc luctus augue id sapien blandit fermentum. Aenean eget ipsum lacinia mi eleifend luctus at a arcu.
-					</p>
-
-					<p>
-						Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-					</p>
-
-				</details>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="chapter-2">Chapter 2</h2>
-
-				<p>
-					Proin non pellentesque leo. Integer finibus luctus mi eu egestas. Integer placerat non tortor id lacinia. Donec faucibus fermentum porta. Praesent fringilla sapien id tempor vestibulum. Morbi egestas dolor vitae lacus mattis, id posuere nulla viverra. Ut ultricies placerat mi, et porttitor nunc sodales sit amet. Cras vehicula lectus eget tortor efficitur, sit amet imperdiet velit varius. Pellentesque ultricies purus pretium magna efficitur, eget interdum orci dignissim. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum finibus, lorem at blandit luctus, massa libero feugiat ex, non fringilla ante sem quis lorem. Cras ac consequat dui. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque suscipit turpis leo, at dapibus justo rutrum sed. In nunc nunc, sagittis eget rutrum consectetur, tempus vitae augue.
-				</p>
-
-				<figure>
-
-					<a href="content/painting-forest-lake.jpg" target="_blank">
-				    	<img src="content/painting-forest-lake.jpg" alt="A painted representation of a forest with a big blue lake" width="100%" height="auto">
-				    </a>
-
-				    <figcaption>
-
-				    	<p>
-				    		<em><a href="https://www.youtube.com/watch?v=bkKTSw4pL2A" target="_blank">Painting of a forest with a blue lake</a>, by Anonymous</em>
-				    	</p>
-
-				    </figcaption>
-
-				</figure>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-				<h2 id="epilogue">Epilogue</h2>
-
-				<p>
-					Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a sem dignissim, pulvinar risus sed, maximus mi. Sed non neque et nulla dignissim convallis. In tincidunt pharetra feugiat. Etiam vel velit accumsan, hendrerit lorem et, aliquet est. Fusce et ante porta, malesuada felis eget, vulputate elit. Quisque eu lacus egestas, maximus tellus non, commodo arcu. Nullam orci odio, molestie vel suscipit vitae, aliquam at ante. Sed vehicula dapibus elit, eget posuere sem porttitor eget. Fusce aliquam interdum tortor, et pharetra dui. Donec consectetur vestibulum ipsum, sed euismod odio. Mauris dictum, velit sit amet dictum imperdiet, enim ex laoreet lorem, ut sodales ex eros nec turpis.
-				</p>
-
-			</main>
+    <!-- BOTTOM CREDITS -->
+    <div class="bottomBar">
+        <p class="imageCredits">
+            <span class="line">Graduation Thesis by Jim Olijkan, </span>
+            <span class="line">Royal Academy of Art, The Hague 2024, </span>
+            <span class="line">Supervised by Prof. Dr. Füsun Türetken</span>
+        </p>
+    </div>
 
 
 
-			<footer>
 
-				<hr>
-
-				<p>
-					Last edit date: 2023/12/11
-				</p>
-
-			</footer>
+    <!-- desktop starts here //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="desktop">
 
 
 
-		</div>
+
+        <div class="pageSection" style="height: 100vh;" style="overflow: hidden;">
+            <!-- TITLE AND SUBTITLE -->
+            <div style="position: relative; width:  100vw; height: auto;">
+                <h1> DR<span class="letter-spacing">A</span>WING BORDERS </h1>
+            </div>
+            <div style="position: relative; width:  100vw;height: auto;">
+                <h2 class="subtitle"> framing (desktop) culture</h2>
+            </div>
+            <div class="menuType"
+                style="position: relative; width:  100vw;height: auto; text-align: center; padding-top: 250px;">
+                <a href="#desktop_id" onclick="smoothScroll(event)">discover</a>
+            </div>
+
+        </div>
+
+
+        <div class="collumnContainer">
 
 
 
-		<!-- end webpage content -->
+            <img src="assets/images/fig_1.png" class="tocImage">
+
+            <div class="collumnPart">
+
+                <div class="pageSection" style="height: 100vh;">
+                    <div class="textBox" style="height: 100vh;">
+                        <h2 id="desktop_id" style="margin-top: 1rem;">Table of contents</h2>
+
+
+                        <div class="tocType">
+                            <a href="abstract.html"
+                                onmouseover="changeImage('assets/images/fig_12.png')">Abstract</a><br>
+                            <a href="preface.html" onmouseover="changeImage('assets/images/fig_1.png')">Preface</a><br>
+                            <a href="theAnatomyOfAFrame.html" onmouseover="changeImage('assets/images/fig_2.png')">The
+                                anatomy of a
+                                frame</a><br>
+                            <a href="instancesOfFrames_1.html"
+                                onmouseover="changeImage('assets/images/fig_22.png')">Instances of
+                                frames</a><br>
+
+                            <a href="conclusionAndAcknowledgements.html"
+                                onmouseover="changeImage('assets/images/fig_32.png')">Conclusion and
+                                Acknowledgements</a><br>
+                            <a href="bibliography.html"
+                                onmouseover="changeImage('assets/images/fig_28.png')">Bibliography</a>
+                        </div>
+
+                    </div>
+                </div>
 
 
 
-	</body>
+
+
+            </div>
+
+
+            <div class="collumnPart">
+
+                <div class="pageSection" style="height: 100vh;">
+                    <div style="transform: scaleX(-1); height: 100vh;" class="textBox">
+                        <h2 style="margin-top: 1rem;">Table of contents</h2>
+
+
+
+                        <div class="tocType">
+                            <a href="abstract.html"
+                                onmouseover="changeImage('assets/images/fig_12.png')">Abstract</a><br>
+                            <a href="preface.html" onmouseover="changeImage('assets/images/fig_1.png')">Preface</a><br>
+                            <a href="theAnatomyOfAFrame.html" onmouseover="changeImage('assets/images/fig_2.png')">The
+                                anatomy of a
+                                frame</a><br>
+                            <a href="instancesOfFrames_1.html"
+                                onmouseover="changeImage('assets/images/fig_22.png')">Instances of
+                                frames</a><br>
+
+                            <a href="conclusionAndAcknowledgements.html"
+                                onmouseover="changeImage('assets/images/fig_32.png')">Conclusion and
+                                Acknowledgements</a><br>
+                            <a href="bibliography.html"
+                                onmouseover="changeImage('assets/images/fig_28.png')">Bibliography</a>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <!-- desktop end -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+    <!-- MOBILE -->
+
+    <!-- mobile starts here //////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="mobile">
+
+
+        <div class="pageSection" style="height: 100vh;" style="overflow: hidden;">
+            <!-- TITLE AND SUBTITLE -->
+            <div style="position: relative; width:  100vw; height: auto;">
+                <h1> DR<span class="letter-spacing">A</span>WING BORDERS </h1>
+            </div>
+            <div style="position: relative; width:  100vw;height: auto;">
+                <h2 class="subtitle"> framing (mobile) culture</h2>
+            </div>
+            <div class="menuType"
+                style="position: relative; width:  100vw;height: auto; text-align: center; padding-top: 250px;">
+                <a href="#mobile_id" onclick="smoothScroll(event)">discover</a>
+            </div>
+        </div>
+
+
+
+
+        <div class="pageSection" style="height: 100vh;">
+            <div class="textBox" style="height: 100vh;">
+                <h2 id="mobile_id" style="margin-top: 1rem;">Table of contents</h2>
+                <img src="assets/images/fig_1.png" class="tocImage2">
+
+                <div class="tocType">
+                    <a href="abstract.html" onmouseover="changeImage('assets/images/fig_12.png')">Abstract</a><br>
+                    <a href="preface.html" onmouseover="changeImage('assets/images/fig_1.png')">Preface</a><br>
+                    <a href="theAnatomyOfAFrame.html" onmouseover="changeImage('assets/images/fig_2.png')">The anatomy of a frame</a><br>
+                    <a href="instancesOfFrames_1.html" onmouseover="changeImage('assets/images/fig_22.png')">Instances of frames</a><br>
+                    
+                    <a href="conclusionAndAcknowledgements.html"
+                        onmouseover="changeImage('assets/images/fig_32.png')">Conclusion and Acknowledgements</a><br>
+                    <a href="bibliography.html" onmouseover="changeImage('assets/images/fig_28.png')">Bibliography</a>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+    <!-- mobile end -->
+
+
+    <script src="homepage.js"></script>
+</body>
 
 </html>
