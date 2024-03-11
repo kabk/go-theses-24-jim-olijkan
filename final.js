@@ -62,6 +62,11 @@ document.addEventListener('DOMContentLoaded', function () {
         menu.classList.toggle('menuShow');
     });
 
+
+    
+
+
+
     function checkIfChromeAndWindowSize() {
         if (isChrome() && isDesktop() == true) {
             //THIS IS THE START OF THE CODE FOR CHROME DESKTOP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,7 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         r.style.setProperty('--imageWidth', imageWidth);
 
                     });
+                    img.onload = null;
                 });
+                // Clear the onload event to avoid memory leak
+
             }
 
             updateImageSizeAndPosition()
@@ -124,9 +132,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 images.forEach(function (image) {
                     imageHeight = image.style.height;
                     image.style.marginTop = `${(vh / 2 - parseInt(imageHeight) / 2) + (window.scrollY)}px`;
-
+                    
                 })
-
+                
             }
 
             window.addEventListener('scroll', throttle(runOnScroll, 5));
@@ -162,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     imgElement2.style.shapeOutside = 'url("assets/images/' + filename + '")';
                         
                                     // You may need to update other properties or trigger functions related to image changes
-                                    // updateImageSizeAndPosition();
+                                    updateImageSizeAndPosition();
                                 };
                         
                                 document.getElementById('credits').innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
@@ -170,7 +178,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 // Change the src of the image
                                 imgElement1.src = "assets/images/" + filename;
                                 imgElement2.src = "assets/images/" + filename;
-                                updateImageSizeAndPosition();
+                                // updateImageSizeAndPosition();
                             }
                         });
                     }
@@ -388,7 +396,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     imgElement4.style.shapeOutside = 'url("assets/images/' + filename + '")';
                                     imgElement4.src = "assets/images/" + filename;
                                     // You may need to update other properties or trigger functions related to image changes
-                                    // updateImageSizeAndPosition();
+                                    
                                 };
                         
                                 // Change the src of the image
