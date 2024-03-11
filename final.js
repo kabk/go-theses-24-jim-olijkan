@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const intervalDuration = 1000; // Interval duration in milliseconds (1 second in this case)
 
             // Function to increment the counter and handle class toggling
-            function handleClick() {
+            function handleClickOld() {
 
                 centerImageMobile.classList.add('showImage'); // Initially add the class
                 centerImageDesktop.classList.add('showImage'); // Initially add the class
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 imageCredits.innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
                         
                                 // author + ", " + title + ", " + date + ", " + photoCredits 
-                                // handleClick()
+                                handleClickOld()
                             }
                             imageCredits.innerHTML = "(fig. " + (i + 1) + ") " + '<span class="line">' + author + '</span>' + ", " + '<span class="line">' + title + '</span>' + ", " + '<span class="line">' + date + '</span>' + ", " + '<span class="line">' + photoCredits + '</span>';
                         });
