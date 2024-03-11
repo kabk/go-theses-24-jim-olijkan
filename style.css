@@ -344,6 +344,7 @@ ol>li>p {
 .clickMe {
   color: yellow;
   cursor: alias;
+  user-select: none;
 }
 
 
