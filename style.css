@@ -79,7 +79,8 @@ h2:first-of-type {
   will-change: contents;
   backface-visibility: hidden;
   /* pointer-events: none; */
-  /* border: 1p solid lime; */
+  border: 2px solid lime;
+  height: 500vh;
 }
 
 
@@ -97,15 +98,17 @@ h2:first-of-type {
   will-change: contents;
   backface-visibility: hidden;
   pointer-events: all;
+  height: min-content;
+  /* border: 1px solid white; */
 }
 
 .col1 {
-  /* border: 1px solid blue; */
+  border: 1px solid blue;
   /* color: #B3A2C7; */
 }
 
 .col2 {
-  /* border: 1px solid red; */
+  border: 1px solid red;
 
   color: grey;
 }
@@ -177,6 +180,7 @@ p {
   margin-right: calc(calc(var(--imageWidth)/2) + calc(var(--gutter)/2));
   margin-left: var(--margins);
   /* color: #9800DE; */
+  border: 2px solid fuchsia;
 }
 
 
@@ -185,6 +189,7 @@ p {
   margin-right: var(--margins);
   transform: scaleX(-1);
   /* color: #56007D; */
+  border: 2px solid lime;
 }
 
 
@@ -320,7 +325,7 @@ li::before {
   counter-increment: list-item;
   font-family: Golden;
   margin-right: 5px;
-  /* Adjust as needed */
+  
 }
 
 

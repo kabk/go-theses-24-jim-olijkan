@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    console.log("Device Pixel Ratio:", window.devicePixelRatio);
-    
     //makes variables for viewport width and height
     var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
     var vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
@@ -71,22 +69,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function checkIfChromeAndWindowSize() {
         if (isChrome() && isDesktop() == true) {
-            //THIS IS THE START OF THE CODE FOR CHROME DESKTOP//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-            //turns the background blue to show I am in the correct document
-            // document.body.style.backgroundColor = 'darkgreen';
-            // console.log("You are using Chrome.");
-            
-
-
-
-
-
-            
-            //toggles off the non chrome html
+            //THIS IS THE START OF THE CODE FOR CHROME DESKTOP///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
             document.querySelector('.chromeDesktop').style.display = 'block'
             document.querySelector('.nonChromeDesktop').style.display = 'none'
 
+            console.log("You are using Chrome.");
+            // document.body.style.backgroundColor = 'red';
 
             var r = document.querySelector(':root');
 
@@ -96,6 +84,62 @@ document.addEventListener('DOMContentLoaded', function () {
             var image1 = document.getElementById('myImgID_1');
             var image2 = document.getElementById('myImgID_2');
 
+            function updateImageSizeAndPosition() {
+                // Get all images with the class 'myIMG'
+                
+                var images = document.querySelectorAll('.myIMG');
+
+                // Loop through each image
+                images.forEach(function (image) {
+                    // Create a new Image object for each image
+                    var img = new Image();
+
+                    // Set the src attribute to the image's current src
+                    img.src = image.src;
+
+                    // Add a load event listener to the Image object
+                    img.addEventListener('load', function () {
+                        // Inside the load event handler, you can access the naturalWidth and naturalHeight properties
+                        if (img.naturalWidth / img.naturalHeight > 1) {
+                            var maxSize = vw * 0.2;
+                            image.style.width = `${maxSize}px`;
+                            image.style.height = `${parseInt((img.naturalHeight / img.naturalWidth) * maxSize)}px`;
+                        } else {
+                            var maxSize = vh * 0.3;
+                            image.style.height = `${maxSize}px`;
+                            image.style.width = `${parseInt((img.naturalWidth / img.naturalHeight) * maxSize)}px`;
+                        }
+
+                        // Keep the image centered (adds scroll position to the top margin)
+                        // var imageHeight = image.style.height;
+
+                        // Update the size in the root
+                        var imageWidth = image.style.width;
+                        r.style.setProperty('--imageWidth', imageWidth);
+
+                    });
+                    img.onload = null;
+                });
+                // Clear the onload event to avoid memory leak
+                
+            }
+
+            updateImageSizeAndPosition()
+
+            function runOnScroll() {   //// this is the throttled scroll function
+
+                //this positions the image in the center and lets it stay there when scrolling.
+                var images = document.querySelectorAll('.myIMG');
+                images.forEach(function (image) {
+                    imageHeight = image.style.height;
+                    image.style.marginTop = `${parseInt((vh / 2 - parseInt(imageHeight) / 2) + (window.scrollY))}px`;
+                    console.log("imageHeight" + imageHeight);
+                    console.log("image.style.marginTop " + image.style.marginTop );
+                })
+                
+            }
+
+            window.addEventListener('scroll', throttle(runOnScroll, 5));
 
             fetch('assets/json/image_credits.json')
                 .then(response => response.json())
@@ -147,72 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
 
 
-            function updateImageSizeAndPosition() {
-
-                // Get all images with the class 'myIMG'
-                var images = document.querySelectorAll('.myIMG');
-
-                // Loop through each image
-                images.forEach(function (image) {
-                    // Create a new Image object for each image
-                    var img = new Image();
-
-                    // Set the src attribute to the image's current src
-                    img.src = image.src;
-
-                    // Add a load event listener to the Image object
-                    img.addEventListener('load', function () {
-
-                        // Inside the load event handler, you can access the naturalWidth and naturalHeight properties
-                        if (img.naturalWidth / img.naturalHeight > 1) {
-                            var maxSize = vw * 0.2;
-                            image.style.width = `${maxSize}px`;
-                            image.style.height = `${parseInt((img.naturalHeight / img.naturalWidth) * maxSize)}px`;
-                        } else {
-                            var maxSize = vh * 0.2;
-                            image.style.height = `${maxSize}px`;
-                            image.style.width = `${parseInt((img.naturalWidth / img.naturalHeight) * maxSize)}px`;
-                        }
-
-                        // Keep the image centered (adds scroll position to the top margin)
-                        // var imageHeight = image.style.height;
-
-                        // Update the size in the root
-                        var imageWidth = image.style.width;
-                        r.style.setProperty('--imageWidth', imageWidth);
-
-                    });
-                    // img.onload = null;
-                });
-                // Clear the onload event to avoid memory leak
-                
-            }
-
-            updateImageSizeAndPosition()
-
-            function runOnScroll() {   //// this is the throttled scroll function
-
-                //this positions the image in the center and lets it stay there when scrolling.
-                var images = document.querySelectorAll('.myIMG');
-                images.forEach(function (image) {
-                    imageHeight = image.style.height;
-                    image.style.marginTop = `${parseInt((vh / 2 - parseInt(imageHeight) / 2) + (window.scrollY))}px`;
-                    // console.log("imageHeight" + imageHeight);
-                    // console.log("image.style.marginTop " + image.style.marginTop );
-                })  
-            }
-
-            window.addEventListener('scroll', throttle(runOnScroll, 5));
-
-            
-
-
-
-
-
-
-
-                //this little code just makes it so that there is no error message when a page doesn't contain an image.
                 function documentContainsId(id) {
                     // Try to find the element with the specified ID
                     var element = document.getElementById(id);
@@ -236,6 +214,93 @@ document.addEventListener('DOMContentLoaded', function () {
                 
 
             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
