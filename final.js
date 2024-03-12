@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    console.log("Device Pixel Ratio:", window.devicePixelRatio);
+    // console.log("Device Pixel Ratio:", window.devicePixelRatio);
     
     //makes variables for viewport width and height
     var vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
@@ -31,7 +31,8 @@ document.addEventListener('DOMContentLoaded', function () {
         vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0)
 
-        console.log("isDesktop = " + isDesktop());
+        console.log("width = " + vw);
+        // console.log("isDesktop = " + isDesktop());
         // changeColor()
         checkIfChromeAndWindowSize()
     }
@@ -169,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             image.style.width = `${maxSize}px`;
                             image.style.height = `${parseInt((img.naturalHeight / img.naturalWidth) * maxSize)}px`;
                         } else {
-                            var maxSize = vh * 0.2;
+                            var maxSize = vh * 0.3;
                             image.style.height = `${maxSize}px`;
                             image.style.width = `${parseInt((img.naturalWidth / img.naturalHeight) * maxSize)}px`;
                         }
@@ -269,7 +270,8 @@ document.addEventListener('DOMContentLoaded', function () {
             document.querySelector('.chromeDesktop').style.display = 'none'
             document.querySelector('.nonChromeDesktop').style.display = 'block'
 
-            console.log("You are not using Chrome.");
+            // console.log("You are not using Chrome.");
+
             // document.body.style.backgroundColor = 'blue';
 
 
