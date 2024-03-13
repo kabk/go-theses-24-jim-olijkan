@@ -138,6 +138,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                 imgElement1.src = "assets/images/" + filename;
                                 imgElement2.src = "assets/images/" + filename;
                                 // updateImageSizeAndPosition();
+
+                                
                             }
                         });
                     }
@@ -182,8 +184,19 @@ document.addEventListener('DOMContentLoaded', function () {
                         var imageWidth = image.style.width;
                         r.style.setProperty('--imageWidth', imageWidth);
 
+                        var images = document.querySelectorAll('.myIMG');
+                        images.forEach(function (image) {
+                            imageHeight = image.style.height;
+                            image.style.marginTop = `${parseInt((vh / 2 - parseInt(image.style.height) / 2) + (window.scrollY))}px`;
+                            // console.log("imageHeight" + imageHeight);
+                            // console.log("image.style.marginTop " + image.style.marginTop );
+                        })  
+
+
+
                     });
                     // img.onload = null;
+                    
                 });
                 // Clear the onload event to avoid memory leak
                 
